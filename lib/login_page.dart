@@ -1,5 +1,4 @@
 import 'dart:js';
-
 import 'package:chat_app/chat_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,7 @@ class LoginPage extends StatelessWidget {
       print(userNameController.text);
       print(userPasswordController.text);
 
-      Navigator.pushNamed(context, '/chat',
+      Navigator.pushReplacementNamed(context, '/chat',
           arguments: '$userNameController.text');
       print('login succesfull!');
     } else {

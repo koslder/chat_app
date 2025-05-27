@@ -70,6 +70,9 @@ class LoginPage extends StatelessWidget {
                           hintStyle: TextStyle(color: Colors.blueGrey),
                           border: OutlineInputBorder()),
                     ),
+                    SizedBox(
+                      height: 24,
+                    ),
                     TextFormField(
                       controller: userPasswordController,
                       obscureText: true,
@@ -80,6 +83,9 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 24,
               ),
               ElevatedButton(
                   onPressed: loginUser,

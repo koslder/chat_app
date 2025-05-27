@@ -45,11 +45,23 @@ class LoginPage extends StatelessWidget {
                     'Click me!',
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
                   )),
-              TextButton(
-                  onPressed: () {
-                    print('Pressed on the URL!');
-                  },
-                  child: Text('https://poojabhaumik.com'))
+              GestureDetector(
+                onDoubleTap: () {
+                  print('double tapped!');
+                },
+                onLongPress: () {
+                  print('onLongpress');
+                },
+                onTap: () {
+                  print('Link Clicked');
+                },
+                child: Column(
+                  children: [
+                    Text('Find us on'),
+                    Text('https://poojabhaumik.com'),
+                  ],
+                ),
+              )
             ],
           ),
         ),

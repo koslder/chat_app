@@ -16,6 +16,7 @@ class ChatPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              Navigator.pop(context);
               print('Icon Pressed!');
             },
             icon: const Icon(Icons.logout),
@@ -34,13 +35,6 @@ class ChatPage extends StatelessWidget {
                           : Alignment.centerRight,
                       message: "Hello, this is Pooja!");
                 }),
-            // flex: 1,
-            // child: ListView(
-            //   children: [
-            //
-            //     ChatBubble(alignment: Alignment.centerRight, message: "Hi!"),
-            //   ],
-            // ),
           ),
           ChatInput(),
         ],

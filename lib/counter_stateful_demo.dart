@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CounterStateful extends StatefulWidget {
-  Color buttonColor = Colors.blue;
+  final Color buttonColor;
 
   const CounterStateful({Key? key, required this.buttonColor})
       : super(key: key);

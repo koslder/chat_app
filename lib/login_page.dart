@@ -1,4 +1,6 @@
 import 'dart:js';
+import 'package:social_media_buttons/social_media_buttons.dart';
+
 import 'utils/textfield_styles.dart';
 import 'package:chat_app/chat_page.dart';
 import 'package:flutter/material.dart';
@@ -113,6 +115,21 @@ class LoginPage extends StatelessWidget {
                     Text(_mainUrl),
                   ],
                 ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialMediaButton.twitter(
+                    size: 20,
+                    color: Colors.blue,
+                    url: "twitter.com",
+                  ),
+                  SocialMediaButton.linkedin(
+                    size: 20,
+                    color: Colors.blue,
+                    url: "linkedin.com",
+                  ),
+                ],
               )
             ],
           ),

@@ -62,7 +62,7 @@ class _ChatPageState extends State<ChatPage> {
     setState(() {});
   }
 
-  _getNetworkImages() async {
+  Future<List<PixelfordImage>> _getNetworkImages() async {
     var endpointUrl = Uri.parse('https://picsum.photos/v2/list');
 
     final response = await http.get(endpointUrl);
@@ -75,6 +75,9 @@ class _ChatPageState extends State<ChatPage> {
       }).toList();
 
       print(_imageList[0].urlFullSize);
+      return _imageList;
+    } else {
+      throw Exception('Api not succesful!');
     }
   }
 
@@ -107,6 +110,15 @@ class _ChatPageState extends State<ChatPage> {
       ),
       body: Column(
         children: [
+          FutureBuilder<List<PixelfordImage>>(
+              future: _getNetworkImages(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<List<PixelfordImage>> snapshot) {
+                if (snapshot.hasData)
+                  return Image.network(snapshot.data![0].urlSmallSize);
+
+                return CircularProgressIndicator();
+              }),
           Expanded(
             child: ListView.builder(
                 itemCount: _messages.length,

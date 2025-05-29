@@ -1,5 +1,5 @@
-import 'package:chat_app/utils/textfield_styles.dart';
 import 'package:flutter/material.dart';
+import '../utils/textfield_styles.dart';
 
 class LoginTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -24,7 +24,7 @@ class LoginTextField extends StatelessWidget {
       },
       controller: controller,
       decoration: InputDecoration(
-          hintText: 'Add your username',
+          hintText: '$hinText',
           hintStyle: ThemeTextStyle.loginTextFieldStyle,
           border: OutlineInputBorder()),
     );

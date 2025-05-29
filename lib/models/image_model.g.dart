@@ -6,8 +6,8 @@ part of 'image_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PixelfromImage _$PixelfromImageFromJson(Map<String, dynamic> json) =>
-    PixelfromImage(
+PixelfordImage _$PixelfordImageFromJson(Map<String, dynamic> json) =>
+    PixelfordImage(
       title: json['title'] as String?,
       filename: json['filename'] as String,
       id: json['id'] as String,
@@ -15,7 +15,7 @@ PixelfromImage _$PixelfromImageFromJson(Map<String, dynamic> json) =>
       urlSmallSize: json['url_small_size'] as String,
     );
 
-Map<String, dynamic> _$PixelfromImageToJson(PixelfromImage instance) =>
+Map<String, dynamic> _$PixelfordImageToJson(PixelfordImage instance) =>
     <String, dynamic>{
       'id': instance.id,
       'filename': instance.filename,

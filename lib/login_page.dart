@@ -1,8 +1,4 @@
-import 'dart:js';
 import 'package:social_media_buttons/social_media_buttons.dart';
-
-import 'utils/textfield_styles.dart';
-import 'package:chat_app/chat_page.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/widgets/login_text_field.dart';
 import 'package:chat_app/utils/spaces.dart';

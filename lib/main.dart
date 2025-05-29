@@ -1,8 +1,6 @@
 import 'package:chat_app/chat_page.dart';
-import 'package:chat_app/counter_stateful_demo.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/login_page.dart';
-import 'package:chat_app/utils/brand_color.dart';
 
 void main() {
   runApp(ChatApp());

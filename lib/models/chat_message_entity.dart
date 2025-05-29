@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class ChatMessageEntity {
   String text;
   String? imageUrl;

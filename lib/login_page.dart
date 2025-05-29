@@ -1,6 +1,8 @@
 import 'dart:js';
+import 'utils/textfield_styles.dart';
 import 'package:chat_app/chat_page.dart';
 import 'package:flutter/material.dart';
+import 'package:chat_app/widgets/login_text_field.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -59,7 +61,8 @@ class LoginPage extends StatelessWidget {
                 key: _formkey,
                 child: Column(
                   children: [
-                    TextFormField(
+                    LoginTextField(
+                      hinText: "Enter your username",
                       validator: (value) {
                         if (value != null &&
                             value.isNotEmpty &&
@@ -71,21 +74,14 @@ class LoginPage extends StatelessWidget {
                         return null;
                       },
                       controller: userNameController,
-                      decoration: InputDecoration(
-                          hintText: 'Add your username',
-                          hintStyle: TextStyle(color: Colors.blueGrey),
-                          border: OutlineInputBorder()),
                     ),
                     SizedBox(
                       height: 24,
                     ),
-                    TextFormField(
+                    LoginTextField(
+                      hasAsterisks: true,
+                      hinText: 'Type your password',
                       controller: userPasswordController,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          hintText: 'Type your password',
-                          hintStyle: TextStyle(color: Colors.blueGrey),
-                          border: OutlineInputBorder()),
                     ),
                   ],
                 ),

@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
       print(userPasswordController.text);
 
       Navigator.pushReplacementNamed(context, '/chat',
-          arguments: '$userNameController.text');
+          arguments: userNameController.text);
       print('login succesfull!');
     } else {
       print('not succesfull!');

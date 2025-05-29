@@ -17,7 +17,7 @@ class ChatBubble extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              '$entity.text',
+              entity.text,
               style: const TextStyle(fontSize: 20, color: Colors.white),
             ),
             if (entity.imageUrl != null)

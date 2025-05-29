@@ -7,11 +7,7 @@ class CounterStateful extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<CounterStateful> createState() {
-    State<CounterStateful> stateClassAssociatedWithThisWidget =
-        _CounterStatefulState();
-    return stateClassAssociatedWithThisWidget;
-  }
+  State<CounterStateful> createState() => _CounterStatefulState();
 }
 
 class _CounterStatefulState extends State<CounterStateful> {

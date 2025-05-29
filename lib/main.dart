@@ -2,6 +2,7 @@ import 'package:chat_app/chat_page.dart';
 import 'package:chat_app/counter_stateful_demo.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/login_page.dart';
+import 'package:chat_app/utils/brand_color.dart';
 
 void main() {
   runApp(ChatApp());
@@ -13,7 +14,7 @@ class ChatApp extends StatelessWidget {
     return MaterialApp(
       title: "Chat App",
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: BrandColor.primaryColor,
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.blue,
           foregroundColor: Colors.black,

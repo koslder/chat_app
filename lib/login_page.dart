@@ -4,6 +4,7 @@ import 'package:chat_app/chat_page.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/widgets/login_text_field.dart';
 import 'package:chat_app/utils/spaces.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -25,6 +26,8 @@ class LoginPage extends StatelessWidget {
 
   final userNameController = TextEditingController();
   final userPasswordController = TextEditingController();
+  final _mainUrl =
+      "https://www.roblox.com/share?code=eccc85be8ada934984a7d3dbf108f368&type=Server";
 
   @override
   Widget build(BuildContext context) {
@@ -98,13 +101,16 @@ class LoginPage extends StatelessWidget {
                 onLongPress: () {
                   print('onLongpress');
                 },
-                onTap: () {
+                onTap: () async {
                   print('Link Clicked');
+                  if (!await launch(_mainUrl)) {
+                    throw 'Could not launch this!';
+                  }
                 },
                 child: Column(
                   children: [
                     Text('Find us on'),
-                    Text('https://poojabhaumik.com'),
+                    Text(_mainUrl),
                   ],
                 ),
               )

@@ -1,6 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/cupertino.dart';
 
-class AuthService {
+class AuthService extends ChangeNotifier {
   static init() async {
     _prefs = await SharedPreferences.getInstance();
   }
@@ -22,5 +23,10 @@ class AuthService {
 
   String? getUserName() {
     return _prefs.getString('userName') ?? 'DefaultValue';
+  }
+
+  void updateUserName(String newName) {
+    _prefs.setString('userName', newName);
+    notifyListeners();
   }
 }

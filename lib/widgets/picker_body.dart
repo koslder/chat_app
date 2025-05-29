@@ -39,9 +39,9 @@ class NetworkImagePickerBody extends StatelessWidget {
                 final image = snapshot.data![index];
                 return GestureDetector(
                   onTap: () {
-                    onImageSelected(image.urlFullSize);
+                    onImageSelected(image.downloadUrl);
                   },
-                  child: Image.network(image.urlFullSize),
+                  child: Image.network(image.downloadUrl),
                 );
               },
             );

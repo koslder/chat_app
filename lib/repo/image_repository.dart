@@ -17,7 +17,7 @@ class ImageRepository {
           return PixelfordImage.fromJson(listItem);
         }).toList();
 
-        print(_imageList[0].urlFullSize);
+        print(_imageList[0].downloadUrl);
         return _imageList;
       } else {
         throw Exception('Api not succesful!');

@@ -4,22 +4,18 @@ part 'image_model.g.dart';
 
 @JsonSerializable()
 class PixelfordImage {
-  String id;
-  String filename;
-  String? title;
+  final String id;
+  final String author;
+  final String url;
+  @JsonKey(name: 'download_url')
+  final String downloadUrl;
 
-  @JsonKey(name: 'url_full_size')
-  String urlFullSize;
-
-  @JsonKey(name: 'url_small_size')
-  String urlSmallSize;
-
-  PixelfordImage(
-      {this.title,
-      required this.filename,
-      required this.id,
-      required this.urlFullSize,
-      required this.urlSmallSize});
+  PixelfordImage({
+    required this.id,
+    required this.author,
+    required this.url,
+    required this.downloadUrl,
+  });
 
   factory PixelfordImage.fromJson(Map<String, dynamic> json) =>
       _$PixelfordImageFromJson(json);

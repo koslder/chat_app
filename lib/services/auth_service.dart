@@ -25,6 +25,7 @@ class AuthService extends ChangeNotifier {
 
   void logoutUser() {
     _prefs.clear();
+    notifyListeners(); // Add this to trigger UI updates
   }
 
   String? getUserName() {

@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
+import 'login_page.dart';
+
 class ChatPage extends StatefulWidget {
   ChatPage({Key? key}) : super(key: key);
 
@@ -83,10 +85,15 @@ class _ChatPageState extends State<ChatPage> {
         title: Text('Hi $username!'),
         actions: [
           IconButton(
-              onPressed: () {
-                context.read<AuthService>().updateUserName("New Name!");
-              },
-              icon: Icon(Icons.change_circle)),
+            onPressed: () {
+              context.read<AuthService>().logoutUser();
+              // Navigate to login screen
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (_) => LoginPage()),
+              );
+            },
+            icon: Icon(Icons.logout), // Consider using a logout icon
+          ),
         ],
       ),
       body: Column(
